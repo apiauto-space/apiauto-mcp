@@ -1,0 +1,6 @@
+*
+!package.json
+!npm-shrinkwrap.json
+!tsconfig.json
+!tsconfig.build.json
+!src

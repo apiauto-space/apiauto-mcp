@@ -1,0 +1,81 @@
+{
+  "name": "apiauto-mcp",
+  "version": "0.1.0",
+  "mcpName": "io.github.apiauto-space/apiauto-mcp",
+  "description": "Unofficial read-only MCP server for used-car listings: Encar (Korea), Che168 (China), Copart and IAAI (USA) through the apiauto.space API. Free demo key, paid plans from $59 a month",
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "encar",
+    "encar-api",
+    "che168",
+    "che168-api",
+    "copart",
+    "copart-api",
+    "iaai",
+    "korean-cars",
+    "chinese-cars",
+    "used-cars",
+    "car-auction",
+    "car-listings",
+    "vehicle-data",
+    "claude",
+    "cursor"
+  ],
+  "homepage": "https://apiauto.space/en/docs/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apiauto-space/apiauto-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/apiauto-space/apiauto-mcp/issues"
+  },
+  "license": "MIT",
+  "author": "apiauto.space (https://apiauto.space/en/)",
+  "type": "module",
+  "bin": {
+    "apiauto-mcp": "dist/index.js"
+  },
+  "exports": {
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "SECURITY.md",
+    "npm-shrinkwrap.json"
+  ],
+  "engines": {
+    "node": ">=20.19"
+  },
+  "scripts": {
+    "build": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\" && tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "pretest": "npm run build",
+    "test": "node --test --test-concurrency=1 test/client.test.mjs test/tools.test.mjs test/findings.test.mjs test/network.test.mjs test/package.test.mjs test/stdio.test.mjs test/live.test.mjs",
+    "test:unit": "npm run build && node --test test/client.test.mjs test/tools.test.mjs test/findings.test.mjs test/network.test.mjs test/package.test.mjs",
+    "test:live": "npm run build && node --test test/live.test.mjs",
+    "check:server-json": "node scripts/check-server-json.mjs",
+    "check:openapi": "node scripts/check-openapi.mjs",
+    "version": "node scripts/sync-version.mjs && git add src/version.ts server.json README.md REGISTRY_LISTINGS.md",
+    "prepublishOnly": "npm test",
+    "check:keyless": "npm run build && node scripts/check-keyless.mjs --docker"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "20.19.43",
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "typescript": "7.0.2"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}
