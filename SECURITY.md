@@ -26,7 +26,7 @@ Security fixes go into the latest published version of `apiauto-mcp`.
 | A huge or hanging answer | Timeouts, a response size limit counted after decompression, a limit on what is returned to the model; a client's cancellation stops the request and its retries |
 | Quota spent unnoticed | 5 records by default, 20 at most, 10 with `detail=full`; no automatic paging; cost and quota left in each result; an optional cap per process |
 | Quota spent twice | A paid request whose outcome is unknown (lost connection, timeout, 500, 502, 504) is not retried, and the error says to check `get_usage` before repeating; only 429, 503 and connections that never opened are retried |
-| A malicious dependency update | Exact versions; the whole tree locked with hashes by `npm-shrinkwrap.json`; no install scripts in the tree |
+| A malicious dependency update | Exact versions; the whole tree locked with hashes by `npm-shrinkwrap.json`; no install scripts in the tree. npm follows that file for a package from the registry that marks it; a tarball or a Git install resolves the ranges of dependencies anew |
 | A tampered release | Versions after 0.1.0 are published from GitHub Actions with npm provenance, from a tag on `main`, after a reviewer's approval. 0.1.0 is published by hand and has no provenance |
 
 ## What it cannot do

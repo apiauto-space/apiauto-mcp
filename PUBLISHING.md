@@ -49,6 +49,13 @@ npm login
 npm publish --access public --provenance=false
 ```
 
+Сразу после первой публикации проверьте, что реестр отметил файл версий и установка ему следует. Первая команда должна вывести `true`, вторая показать вложенный `node_modules/apiauto-mcp/node_modules/express-rate-limit` той версии, что в `npm-shrinkwrap.json`. Если нет, защита от новых версий зависимостей не работает, и строку об этом в `SECURITY.md` и `README.md` надо исправить:
+
+```bash
+npm view apiauto-mcp _hasShrinkwrap
+mkdir /tmp/mcp-check && cd /tmp/mcp-check && npm init -y >/dev/null && npm install apiauto-mcp@0.1.0 --ignore-scripts && npm ls express-rate-limit
+```
+
 `--provenance=false` нужен только здесь: provenance подписывается только в CI. У 0.1.0 значка provenance не будет, у следующих версий появится.
 
 Проверка после публикации, в чистой папке:
