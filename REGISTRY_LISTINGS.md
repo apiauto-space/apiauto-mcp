@@ -25,13 +25,13 @@
 **Короткое описание, до 100 символов** (совпадает с `server.json`):
 
 ```
-Unofficial read-only MCP server for used cars from Encar, Che168, Copart, IAAI via apiauto.space
+Official apiauto.space team MCP server, read-only. Used cars: Encar, Che168, Copart, IAAI
 ```
 
 **Описание для форм:**
 
 ```
-Unofficial, read-only MCP server for used-car listings from Encar (South Korea), Che168 (China), and Copart and IAAI auctions (USA) through the apiauto.space API. Search cars, read one car by id, watch new cars and price changes, list makes and models, check data age and quota. Runs locally over stdio. Results mark listing text as untrusted data. Needs an API key: a free demo gives 1 day, 100 requests, up to 20 cars per request and all 3 markets; paid plans start at $59 a month. Not affiliated with Encar, Che168 (Autohome), Copart or IAAI.
+Official read-only MCP server from the apiauto.space team. Used-car listings from Encar (South Korea), Che168 (China), and Copart and IAAI auctions (USA) through the apiauto.space API. Search cars, read one car by id, watch new cars and price changes, list makes and models, check data age and quota. Runs locally over stdio. Results mark listing text as untrusted data. Needs an API key: a free demo gives 1 day, 100 requests, up to 20 cars per request and all 3 markets; paid plans start at $59 a month. Not affiliated with Encar, Che168 (Autohome), Copart or IAAI.
 ```
 
 **Репозиторий:** `https://github.com/apiauto-space/apiauto-mcp`
@@ -40,7 +40,7 @@ Unofficial, read-only MCP server for used-car listings from Encar (South Korea),
 
 **Имя в официальном реестре:** `io.github.apiauto-space/apiauto-mcp`
 
-**Запуск:** `npx -y apiauto-mcp@0.1.0`, переменная `APIAUTO_API_KEY`
+**Запуск:** `npx -y apiauto-mcp@0.1.1`, переменная `APIAUTO_API_KEY`
 
 ## 1. Официальный MCP Registry
 
@@ -96,13 +96,13 @@ node scripts/check-keyless.mjs --docker
 **Строка, если сервер уже есть на Glama:**
 
 ```markdown
-- [apiauto-space/apiauto-mcp](https://github.com/apiauto-space/apiauto-mcp) [![apiauto-space/apiauto-mcp MCP server](https://glama.ai/mcp/servers/apiauto-space/apiauto-mcp/badges/score.svg)](https://glama.ai/mcp/servers/apiauto-space/apiauto-mcp) 📇 ☁️ 🍎 🪟 🐧 - Unofficial read-only access to used-car listings from Encar (Korea), Che168 (China), Copart and IAAI (USA) through the apiauto.space API: search, one car by id, change feed, makes and models, quota. Needs an API key, with a free one-day demo.
+- [apiauto-space/apiauto-mcp](https://github.com/apiauto-space/apiauto-mcp) [![apiauto-space/apiauto-mcp MCP server](https://glama.ai/mcp/servers/apiauto-space/apiauto-mcp/badges/score.svg)](https://glama.ai/mcp/servers/apiauto-space/apiauto-mcp) 📇 ☁️ 🍎 🪟 🐧 - Official read-only MCP server from the apiauto.space team: used-car listings from Encar (Korea), Che168 (China), Copart and IAAI (USA) through the apiauto.space API: search, one car by id, change feed, makes and models, quota. Needs an API key, with a free one-day demo.
 ```
 
 **Без значка Glama:**
 
 ```markdown
-- [apiauto-space/apiauto-mcp](https://github.com/apiauto-space/apiauto-mcp) 📇 ☁️ 🍎 🪟 🐧 - Unofficial read-only access to used-car listings from Encar (Korea), Che168 (China), Copart and IAAI (USA) through the apiauto.space API: search, one car by id, change feed, makes and models, quota. Needs an API key, with a free one-day demo.
+- [apiauto-space/apiauto-mcp](https://github.com/apiauto-space/apiauto-mcp) 📇 ☁️ 🍎 🪟 🐧 - Official read-only MCP server from the apiauto.space team: used-car listings from Encar (Korea), Che168 (China), Copart and IAAI (USA) through the apiauto.space API: search, one car by id, change feed, makes and models, quota. Needs an API key, with a free one-day demo.
 ```
 
 Адрес значка проверьте на странице Glama после шага 2: он может отличаться.
@@ -112,7 +112,7 @@ node scripts/check-keyless.mjs --docker
 **Описание PR:**
 
 ```
-Adds apiauto-mcp, an unofficial read-only MCP server for used-car listings from Encar, Che168, Copart and IAAI through the apiauto.space API. I maintain it and work on apiauto.space.
+Adds apiauto-mcp, the official read-only MCP server from the apiauto.space team, for used-car listings from Encar, Che168, Copart and IAAI through the apiauto.space API. I maintain it and work on apiauto.space.
 
 Runs locally over stdio with npx. It needs an API key, and there is a free one-day demo.
 ```

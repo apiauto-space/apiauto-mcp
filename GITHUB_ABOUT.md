@@ -5,7 +5,7 @@ GitHub → репозиторий → шестерёнка справа от «A
 ## Description
 
 ```
-Encar, Che168, Copart and IAAI MCP server: used-car listings for Claude, Cursor and other AI clients as JSON (unofficial, read-only, by apiauto.space)
+Encar, Che168, Copart and IAAI MCP server: used-car listings for Claude, Cursor and other AI clients as JSON. Official and read-only, from the apiauto.space team; not affiliated with those sources.
 ```
 
 ## Website
@@ -48,7 +48,7 @@ typescript
 
 ```bash
 gh repo edit apiauto-space/apiauto-mcp \
-  --description "Encar, Che168, Copart and IAAI MCP server: used-car listings for Claude, Cursor and other AI clients as JSON (unofficial, read-only, by apiauto.space)" \
+  --description "Encar, Che168, Copart and IAAI MCP server: used-car listings for Claude, Cursor and other AI clients as JSON. Official and read-only, from the apiauto.space team; not affiliated with those sources." \
   --homepage "https://apiauto.space/en/docs/" \
   --add-topic mcp,mcp-server,model-context-protocol,encar,encar-api,che168,che168-api,copart,copart-api,iaai \
   --add-topic korean-cars,china-cars,used-cars,car-data,car-data-api,vehicle-data,car-auction,automotive,claude,typescript

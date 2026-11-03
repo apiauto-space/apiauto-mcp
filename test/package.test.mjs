@@ -264,9 +264,9 @@ describe("the repository's documents", () => {
     assert.ok(readme.includes(`--global --ignore-scripts apiauto-mcp@${pkg.version}`), "the global variant too");
   });
 
-  it("the first paragraphs say what it is, that it is unofficial, its sources, and the price in numbers", () => {
+  it("the first paragraphs say what it is, whose it is, that it is independent, its sources, and the price in numbers", () => {
     const opening = read("README.md").split("## Quick start")[0];
-    for (const word of ["MCP server", "Unofficial", "Encar", "Che168", "Copart", "IAAI", "100 requests", "$59"]) {
+    for (const word of ["Official MCP server from the apiauto.space team", "not affiliated", "Encar", "Che168", "Copart", "IAAI", "100 requests", "$59"]) {
       assert.ok(opening.includes(word), word);
     }
   });
@@ -281,14 +281,20 @@ describe("the repository's documents", () => {
   it("no text calls this official next to someone else's mark", () => {
     for (const file of ["README.md", "GITHUB_ABOUT.md", "SECURITY.md"]) {
       assert.ok(!/official[^.\n]{0,60}(Encar|Che168|Copart|IAAI)/i.test(read(file)), file);
-      assert.ok(!/(Encar|Che168|Copart|IAAI)[^.\n]{0,60}\bofficial/i.test(read(file).replace(/Unofficial/g, "")), file);
+      assert.ok(!/(Encar|Che168|Copart|IAAI)[^.\n]{0,60}\bofficial/i.test(read(file)), file);
     }
-    assert.ok(!/\bofficial/i.test(server.description.replace(/Unofficial/g, "")));
+    for (const text of [server.description, pkg.description]) {
+      assert.ok(!/official[^.\n]{0,60}(Encar|Che168|Copart|IAAI)/i.test(text), text);
+      assert.ok(!/(Encar|Che168|Copart|IAAI)[^.\n]{0,60}\bofficial/i.test(text), text);
+    }
+    for (const text of [read("README.md"), read("GITHUB_ABOUT.md"), read("REGISTRY_LISTINGS.md"), server.description, pkg.description]) {
+      assert.ok(!/unofficial/i.test(text), "the server is apiauto.space's own");
+    }
   });
 
-  it("the README keeps to the length that works, and SECURITY does not promise provenance for 0.1.0", () => {
+  it("the README keeps to the length that works, and SECURITY does not promise provenance for hand-published versions", () => {
     const words = read("README.md").replace(/```[\s\S]*?```/g, "").split(/\s+/).length;
     assert.ok(words <= 950, `${words} words outside code`);
-    assert.match(read("SECURITY.md"), /0\.1\.0 is published by hand and has no provenance/);
+    assert.match(read("SECURITY.md"), /0\.1\.0 and 0\.1\.1 are published by hand and have no provenance/);
   });
 });

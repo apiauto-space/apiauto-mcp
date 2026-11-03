@@ -2,19 +2,19 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.apiauto-space/apiauto-mcp",
   "title": "apiauto.space: Encar, Che168, Copart, IAAI",
-  "description": "Unofficial read-only MCP server for used cars from Encar, Che168, Copart, IAAI via apiauto.space",
+  "description": "Official apiauto.space team MCP server, read-only. Used cars: Encar, Che168, Copart, IAAI",
   "websiteUrl": "https://apiauto.space/en/docs/",
   "repository": {
     "url": "https://github.com/apiauto-space/apiauto-mcp",
     "source": "github"
   },
-  "version": "0.1.0",
+  "version": "0.1.1",
   "packages": [
     {
       "registryType": "npm",
       "registryBaseUrl": "https://registry.npmjs.org",
       "identifier": "apiauto-mcp",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "runtimeHint": "npx",
       "transport": {
         "type": "stdio"

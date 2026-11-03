@@ -4,6 +4,13 @@ All notable changes to this package are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow
 [Semantic Versioning](https://semver.org/).
 
+## [0.1.1] — 2026-11-03
+
+### Changed
+
+- The texts now say that this is the official MCP server from the apiauto.space team. It stays
+  independent of Encar, Che168/Autohome, Copart and IAAI. The code did not change.
+
 ## [0.1.0] — 2026-11-03
 
 ### Added
@@ -18,4 +25,5 @@ All notable changes to this package are documented here. The format follows
 - Timeouts, a response size limit, cancellation, and bounded retries that do not repeat a request
   that may already have been charged.
 
-[0.1.0]: https://github.com/apiauto-space/apiauto-mcp/releases/tag/v0.1.0
+[0.1.1]: https://www.npmjs.com/package/apiauto-mcp/v/0.1.1
+[0.1.0]: https://www.npmjs.com/package/apiauto-mcp/v/0.1.0

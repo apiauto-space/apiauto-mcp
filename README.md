@@ -2,7 +2,7 @@
 
 A read-only MCP server that lets an AI assistant search used-car listings from **Encar** (South Korea), **Che168** (China), and **Copart** and **IAAI** auctions (USA). It runs on your machine over stdio and calls the [apiauto.space](https://apiauto.space/en/) API.
 
-Unofficial: apiauto.space is an independent service, not affiliated with these sources.
+Official MCP server from the apiauto.space team. apiauto.space is an independent service, not affiliated with these sources.
 
 Free demo: 1 day, 100 requests, up to 20 cars per request, all 3 markets. The key comes in Telegram from [@apiautospace_bot](https://t.me/apiautospace_bot?start=demo), no card. Paid plans start at $59 a month: [Pricing](#pricing).
 
@@ -17,7 +17,7 @@ Node 20.19 or newer. Claude Desktop (Settings → Developer → Edit Config) and
   "mcpServers": {
     "apiauto": {
       "command": "npx",
-      "args": ["-y", "apiauto-mcp@0.1.0"],
+      "args": ["-y", "apiauto-mcp@0.1.1"],
       "env": { "APIAUTO_API_KEY": "au_live_your_key" }
     }
   }
@@ -27,10 +27,10 @@ Node 20.19 or newer. Claude Desktop (Settings → Developer → Edit Config) and
 Claude Code:
 
 ```bash
-claude mcp add apiauto --env APIAUTO_API_KEY=au_live_your_key -- npx -y apiauto-mcp@0.1.0
+claude mcp add apiauto --env APIAUTO_API_KEY=au_live_your_key -- npx -y apiauto-mcp@0.1.1
 ```
 
-On Windows, use `cmd /c npx -y apiauto-mcp@0.1.0`. With an exact version, updates reach you only when you change it. Keep a config with your key out of git.
+On Windows, use `cmd /c npx -y apiauto-mcp@0.1.1`. With an exact version, updates reach you only when you change it. Keep a config with your key out of git.
 
 Ask: "Find a Toyota on Che168 with photos." A real `search_cars` result, shortened:
 
@@ -104,7 +104,7 @@ Enterprise terms are by agreement. [Current pricing](https://apiauto.space/en/#p
 `npx` looks in the current folder first, so a project's `node_modules/.bin` or `.npmrc` can replace what starts under this name, with your key in its environment. If your client starts servers from folders you do not trust, install a fixed version globally and run it by absolute path:
 
 ```bash
-npm install --global --ignore-scripts apiauto-mcp@0.1.0
+npm install --global --ignore-scripts apiauto-mcp@0.1.1
 npm root --global
 ```
 

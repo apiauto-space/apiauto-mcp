@@ -1,8 +1,8 @@
 {
   "name": "apiauto-mcp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "mcpName": "io.github.apiauto-space/apiauto-mcp",
-  "description": "Unofficial read-only MCP server for used-car listings: Encar (Korea), Che168 (China), Copart and IAAI (USA) through the apiauto.space API. Free demo key, paid plans from $59 a month",
+  "description": "Official read-only MCP server from the apiauto.space team. Used-car listings: Encar (Korea), Che168 (China), Copart and IAAI (USA) through the apiauto.space API. Free demo key, paid plans from $59 a month",
   "keywords": [
     "mcp",
     "mcp-server",
